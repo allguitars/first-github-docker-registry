@@ -1,0 +1,13 @@
+kind: pipeline
+name: default
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    registry: docker.pkg.github.com
+    repo: docker.pkg.github.com/allguitars/first-github-docker-registry/hello-docker
+    auto_tag: true
+    username: allguitars
+    password:
+      from_secret: github_docker_token
